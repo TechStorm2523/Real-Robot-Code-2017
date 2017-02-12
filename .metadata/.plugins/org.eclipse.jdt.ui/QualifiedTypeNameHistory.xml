@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="edu.wpi.first.wpilibj.Joystick"/>
+<fullyQualifiedTypeName name="org.usfirst.frc.team2523.robot.RobotMap"/>
+<fullyQualifiedTypeName name="edu.wpi.first.wpilibj.Talon"/>
+<fullyQualifiedTypeName name="com.ctre.CANTalon"/>
+<fullyQualifiedTypeName name="org.usfirst.frc.team2523.robot.OI"/>
+<fullyQualifiedTypeName name="edu.wpi.first.wpilibj.buttons.JoystickButton"/>
+<fullyQualifiedTypeName name="org.usfirst.frc.team2523.robot.subsystems.FeedSystem"/>
+<fullyQualifiedTypeName name="org.usfirst.frc.team2523.robot.subsystems.LaunchSystem"/>
+<fullyQualifiedTypeName name="org.usfirst.frc.team2523.robot.subsystems.DriveTrain"/>
+<fullyQualifiedTypeName name="org.usfirst.frc.team2523.robot.commands.DriveRunner"/>
+<fullyQualifiedTypeName name="org.usfirst.frc.team2523.robot.commands.Auto1"/>
+<fullyQualifiedTypeName name="edu.wpi.first.wpilibj.Servo"/>
+<fullyQualifiedTypeName name="org.usfirst.frc.team2523.robot.subsystems.GearSystem"/>
+<fullyQualifiedTypeName name="edu.wpi.first.wpilibj.Timer"/>
+<fullyQualifiedTypeName name="org.usfirst.frc.team2523.robot.commands.DrainHopper"/>
+<fullyQualifiedTypeName name="org.usfirst.frc.team2523.robot.Robot"/>
+<fullyQualifiedTypeName name="edu.wpi.first.wpilibj.Encoder"/>
+<fullyQualifiedTypeName name="edu.wpi.first.wpilibj.Spark"/>
+<fullyQualifiedTypeName name="org.usfirst.frc.team2523.robot.commands.Climb"/>
+<fullyQualifiedTypeName name="org.usfirst.frc.team2523.robot.commands.StopClimb"/>
+</qualifiedTypeNameHistroy>
