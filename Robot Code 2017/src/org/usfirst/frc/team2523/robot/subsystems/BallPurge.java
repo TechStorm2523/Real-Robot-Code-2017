@@ -21,12 +21,12 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class BallPurge extends Subsystem {
 	
 
-    CANTalon lift = new CANTalon(RobotMap.liftBelt);
-    CANTalon intermediate = new CANTalon(RobotMap.outPut);
+    Spark lift = new Spark(RobotMap.liftBelt);
+    Spark intermediate = new Spark(RobotMap.liftRoller);
     
     public void Dump(double speed){
-    	lift.set(speed);
-    	intermediate.set(speed);
+    	lift.set(-speed);
+    	intermediate.set(-speed);
     }
     public void StopDump(){
     	lift.set(0);

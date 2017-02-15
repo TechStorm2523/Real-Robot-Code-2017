@@ -21,7 +21,7 @@ public class RobotMap {
 	public static int intake = 0;
 	public static int transitBelt = 5;
 	public static int liftBelt = 4;
-	public static int outPut = 2;
+	public static int liftRoller = 6;
 	public static int winchMotor = 3;
 	public static int flap1 = 9;
 	public static int flap2 = 6;
