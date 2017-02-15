@@ -46,11 +46,11 @@ public class DriveTrain extends Subsystem {
 	}
 	public void joyDrive(){
 		
-		driveControl.arcadeDrive(OI.controlStick.getY(),OI.controlStick.getTwist());
+		driveControl.arcadeDrive(OI.controlStick.getY(),OI.controlStick.getTwist()/1.7);
 		
 	}
 	public void revJoyDrive(){
-		driveControl.arcadeDrive(-OI.controlStick.getY(),-OI.controlStick.getTwist());
+		driveControl.arcadeDrive(-OI.controlStick.getY(),-OI.controlStick.getTwist()/1.7);
 		
 	}
 	public void driveSet(double num){

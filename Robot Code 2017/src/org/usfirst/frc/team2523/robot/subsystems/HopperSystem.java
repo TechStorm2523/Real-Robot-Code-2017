@@ -18,7 +18,7 @@ public class HopperSystem extends Subsystem {
 	Spark hopperbelt = new Spark(RobotMap.transitBelt);
 	
 	public void transit(){
-		hopperbelt.set(-1);
+		hopperbelt.set(-.5);
 	}
 	public void stoptransit(){
 		hopperbelt.set(0);

@@ -1,6 +1,7 @@
 package org.usfirst.frc.team2523.robot.commands;
 
 import org.usfirst.frc.team2523.robot.Robot;
+import org.usfirst.frc.team2523.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -16,11 +17,15 @@ public class RunTransit extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	
     	Robot.hopperSystem.transit();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	
+    		//Robot.hopperSystem.stoptransit();
+    	
     }
 
     // Make this return true when this Command no longer needs to run execute()

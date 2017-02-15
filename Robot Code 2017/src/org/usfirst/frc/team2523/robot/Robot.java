@@ -11,16 +11,16 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc.team2523.robot.commands.Auto0;
-import org.usfirst.frc.team2523.robot.commands.DrainHopper;
+
 import org.usfirst.frc.team2523.robot.commands.DriveRunner;
 import org.usfirst.frc.team2523.robot.commands.ExampleCommand;
 import org.usfirst.frc.team2523.robot.commands.FeedFuel;
+import org.usfirst.frc.team2523.robot.subsystems.BallPurge;
 import org.usfirst.frc.team2523.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team2523.robot.subsystems.ExampleSubsystem;
 import org.usfirst.frc.team2523.robot.subsystems.FeedSystem;
 import org.usfirst.frc.team2523.robot.subsystems.GearSystem;
 import org.usfirst.frc.team2523.robot.subsystems.HopperSystem;
-import org.usfirst.frc.team2523.robot.subsystems.LaunchSystem;
 import org.usfirst.frc.team2523.robot.subsystems.WinchSystem;
 
 import com.ctre.CANTalon;
@@ -38,7 +38,7 @@ public class Robot extends IterativeRobot {
 	//public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
 	public static final DriveTrain driveTrain = new DriveTrain();
 	public static final FeedSystem feedSystem = new FeedSystem();
-	public static final LaunchSystem launchSystem = new LaunchSystem();
+	public static final BallPurge ballPurge = new BallPurge();
 	public static final GearSystem gearSystem = new GearSystem();
 	public static final WinchSystem winchSystem = new WinchSystem();
 	public static final HopperSystem hopperSystem = new HopperSystem();
