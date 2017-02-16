@@ -59,8 +59,11 @@ public class OI {
 	c6.whileHeld(new Climb());
 	
 	c2.whileHeld(new FeedFuel());
-	c5.whileHeld(new RunTransit());
+	c2.whileHeld(new RunTransit());
+	
 	trigger.whileHeld(new Fire());
+	trigger.whileHeld(new FeedFuel());
+	trigger.whileHeld(new RunTransit());
 	
 	// Start the command when the button is released and let it run the command
 	// until it is finished as determined by it's isFinished method.
