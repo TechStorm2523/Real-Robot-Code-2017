@@ -17,7 +17,7 @@ public class RobotMap {
 	public static double rightvoltage = 12;
 	public static double leftvoltage = 11;
 	public static double rightAvoltage = 7.7;
-	public static double leftAvoltage = 6.7;
+	public static double leftAvoltage = 7.06;
 	public static int leftMotor1 = 4;
 	public static int rightMotor1 = 1;
 	public static int leftMotor2 = 2;

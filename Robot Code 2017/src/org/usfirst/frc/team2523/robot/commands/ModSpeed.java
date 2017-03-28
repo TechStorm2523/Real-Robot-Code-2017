@@ -1,5 +1,6 @@
 package org.usfirst.frc.team2523.robot.commands;
 
+import org.usfirst.frc.team2523.robot.OI;
 import org.usfirst.frc.team2523.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
@@ -16,7 +17,7 @@ public class ModSpeed extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	RobotMap.speedMod=.5;
+    	RobotMap.speedMod=(1-((OI.controlStick.getThrottle()+1)/2));
     }
 
     // Called repeatedly when this Command is scheduled to run
