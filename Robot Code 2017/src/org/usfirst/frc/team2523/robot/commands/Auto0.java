@@ -1,41 +1,32 @@
 package org.usfirst.frc.team2523.robot.commands;
 
-import org.usfirst.frc.team2523.robot.Robot;
-import org.usfirst.frc.team2523.robot.subsystems.GearSystem;
-
-import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.CommandGroup;
 
 /**
  *
  */
-public class Auto0 extends Command {
+public class Auto0 extends CommandGroup {
 
     public Auto0() {
-        
-    }
-
-    // Called just before this Command runs the first time
-    protected void initialize() {
+    //	addSequential(new DriveForDistanceUpdated(4.77)); //Drive to base line
+    	//addSequential(new TurnForAngleUpdated(-300));//Turn left to face gear peg
     	
-    	//Put Something Here.
-    }
-
-    // Called repeatedly when this Command is scheduled to run
-    protected void execute() {
-    }
-
-    // Make this return true when this Command no longer needs to run execute()
-    protected boolean isFinished() {
-        return true;
-    }
-
-    // Called once after isFinished returns true
-    protected void end() {
     	
-    }
+        // Add Commands here:
+        // e.g. addSequential(new Command1());
+        //      addSequential(new Command2());
+        // these will run in order.
 
-    // Called when another command which requires one or more of the same
-    // subsystems is scheduled to run
-    protected void interrupted() {
+        // To run multiple commands at the same time,
+        // use addParallel()
+        // e.g. addParallel(new Command1());
+        //      addSequential(new Command2());
+        // Command1 and Command2 will run in parallel.
+
+        // A command group will require all of the subsystems that each member
+        // would require.
+        // e.g. if Command1 requires chassis, and Command2 requires arm,
+        // a CommandGroup containing them would require both the chassis and the
+        // arm.
     }
 }

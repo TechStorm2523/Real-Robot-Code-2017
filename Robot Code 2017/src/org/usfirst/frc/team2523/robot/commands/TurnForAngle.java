@@ -40,7 +40,7 @@ public class TurnForAngle extends Command {
     	PulsesAtCMDStart = (int) Robot.driveTrain.getTrainValue();
     	
     	if(direc == 1){
-    	Robot.driveTrain.driveSet(maxSPD, maxSPD);
+    	Robot.driveTrain.driveSet(maxSPD, -maxSPD);
     	} else if( direc == -1){
     	Robot.driveTrain.driveSet(-maxSPD, maxSPD);
     	}

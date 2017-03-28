@@ -4,13 +4,18 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
+import org.usfirst.frc.team2523.robot.commands.Auto1;
 import org.usfirst.frc.team2523.robot.commands.Climb;
-
 import org.usfirst.frc.team2523.robot.commands.ExampleCommand;
 import org.usfirst.frc.team2523.robot.commands.FeedFuel;
 import org.usfirst.frc.team2523.robot.commands.Fire;
+import org.usfirst.frc.team2523.robot.commands.ONWARD;
 import org.usfirst.frc.team2523.robot.commands.RunTransit;
+import org.usfirst.frc.team2523.robot.commands.ServoDown;
+import org.usfirst.frc.team2523.robot.commands.ServoUp;
 import org.usfirst.frc.team2523.robot.commands.StopClimb;
+import org.usfirst.frc.team2523.robot.commands.TestAuto;
+import org.usfirst.frc.team2523.robot.commands.ToggleDrive;
 
 
 /**
@@ -18,7 +23,7 @@ import org.usfirst.frc.team2523.robot.commands.StopClimb;
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
-	public static Joystick controlStick = new Joystick(1);
+	public static Joystick controlStick = new Joystick(5);
 	//// CREATING BUTTONS
 	
 	//Reverse = 7
@@ -40,7 +45,8 @@ public class OI {
 	Button c2 = new JoystickButton(controlStick, 2);
 	Button c7 = new JoystickButton(controlStick, 7);
 	Button c5 = new JoystickButton(controlStick, 5);
-	Button c10 = new JoystickButton(controlStick, 11);
+	Button c8 = new JoystickButton(controlStick, 8);
+	Button c10 = new JoystickButton(controlStick, 10);
 	Button c11 = new JoystickButton(controlStick, 11);
 	
 	public OI(){
@@ -55,12 +61,17 @@ public class OI {
 
 	// Run the command while the button is being held down and interrupt it once
 	// the button is released.
-	
+	c11.whenPressed(new TestAuto());
 	c6.whileHeld(new Climb());
+	c7.whileHeld(new ServoDown());
+	c8.whenPressed(new ServoUp());
 	
 	c2.whileHeld(new FeedFuel());
-	c5.whileHeld(new RunTransit());
+	c2.whileHeld(new RunTransit());
+	//trigger.whileHeld(new ONWARD());
+	trigger.whileHeld(new RunTransit());
 	trigger.whileHeld(new Fire());
+	trigger.whileHeld(new FeedFuel());
 	
 	// Start the command when the button is released and let it run the command
 	// until it is finished as determined by it's isFinished method.

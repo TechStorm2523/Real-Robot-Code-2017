@@ -2,6 +2,8 @@
 package org.usfirst.frc.team2523.robot;
 
 
+import edu.wpi.cscore.UsbCamera;
+import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
@@ -11,10 +13,20 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc.team2523.robot.commands.Auto0;
-
+import org.usfirst.frc.team2523.robot.commands.Auto1;
+import org.usfirst.frc.team2523.robot.commands.Auto2;
+import org.usfirst.frc.team2523.robot.commands.Auto3;
+import org.usfirst.frc.team2523.robot.commands.Auto4;
+import org.usfirst.frc.team2523.robot.commands.Auto5;
+import org.usfirst.frc.team2523.robot.commands.Auto6;
+import org.usfirst.frc.team2523.robot.commands.DriveForDistanceUpdated;
 import org.usfirst.frc.team2523.robot.commands.DriveRunner;
 import org.usfirst.frc.team2523.robot.commands.ExampleCommand;
 import org.usfirst.frc.team2523.robot.commands.FeedFuel;
+import org.usfirst.frc.team2523.robot.commands.ONWARD;
+import org.usfirst.frc.team2523.robot.commands.Reset;
+import org.usfirst.frc.team2523.robot.commands.ServoDown;
+import org.usfirst.frc.team2523.robot.commands.TurnForAngleUpdated;
 import org.usfirst.frc.team2523.robot.subsystems.BallPurge;
 import org.usfirst.frc.team2523.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team2523.robot.subsystems.ExampleSubsystem;
@@ -65,7 +77,7 @@ public class Robot extends IterativeRobot {
 	public static OI oi;
 
 	Command autonomousCommand;
-	SendableChooser<Command> chooser = new SendableChooser<>();
+	SendableChooser<Command> chooser; 
 
 	/**
 	 * This function is run when the robot is first started up and should be
@@ -73,12 +85,52 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void robotInit() {
-		
+		chooser = new SendableChooser<>();
+		SmartDashboard.putData("Auto mode", chooser);
 		
 		oi = new OI();
-		chooser.addDefault("Default Auto", new ExampleCommand());
-		chooser.addObject("My Auto", new Auto0());
+		
+		//Autos
+		chooser.addDefault("Do Nothing", new Auto0());
+		
+		chooser.addObject("Blue team, Far Right", new Auto1());
+		chooser.addObject("Blue team, Middle", new Auto2());
+		chooser.addObject("Blue team, Far Left", new Auto3());
+		chooser.addObject("Red Team, Far Left", new Auto4());
+		chooser.addObject("Red Team, Middle", new Auto5());
+		chooser.addObject("Red Team, Far Right", new Auto6());
+		
+		
+		//Dashboard Puts
 		SmartDashboard.putData("Auto mode", chooser);
+		SmartDashboard.putData(Robot.gearSystem);
+		SmartDashboard.putData(Robot.driveTrain);
+		SmartDashboard.putData("DoAReset", new Reset() );
+		SmartDashboard.putData("4Forward", new DriveForDistanceUpdated(10));
+		SmartDashboard.putData("Turn 90", new Auto0());
+		
+		//Drivetrain reset
+		driveTrain.reset();
+		driveTrain.motorR1.configPeakOutputVoltage(+12, -12);
+		driveTrain.motorR2.configPeakOutputVoltage(+12, -12);
+		driveTrain.motorL1.configPeakOutputVoltage(+11, -11);
+		driveTrain.motorL2.configPeakOutputVoltage(+11, -11);
+		
+		driveTrain.motorL1.changeControlMode(CANTalon.TalonControlMode.PercentVbus);
+		driveTrain.motorL2.changeControlMode(CANTalon.TalonControlMode.PercentVbus);
+		
+		
+		driveTrain.motorR1.changeControlMode(CANTalon.TalonControlMode.PercentVbus);
+		driveTrain.motorR2.changeControlMode(CANTalon.TalonControlMode.PercentVbus);
+		
+		//Camera Code
+		UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
+		camera.setResolution(320, 240);
+		
+		camera.setFPS(30);
+		
+		
+		
 	}
 
 	/**
@@ -109,11 +161,12 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void autonomousInit() {
-		autonomousCommand = chooser.getSelected();
+		Robot.gearSystem.up();
+		autonomousCommand = new Auto3();
 
 		/*
 		 * String autoSelected = SmartDashboard.getString("Auto Selector",
-		 * "Default"); switch(autoSelected) { case "My Auto": autonomousCommand
+		 * "D efault"); switch(autoSelected) { case "My Auto": autonomousCommand
 		 * = new MyAutoCommand(); break; case "Default Auto": default:
 		 * autonomousCommand = new ExampleCommand(); break; }
 		 */

@@ -1,6 +1,7 @@
 package org.usfirst.frc.team2523.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc.team2523.robot.Robot;
 import org.usfirst.frc.team2523.robot.subsystems.DriveTrain;
@@ -23,16 +24,16 @@ public class DriveRunner extends Command {
 	// Called just before this Command runs the first time
 	@Override
 	protected void initialize() {
+		
+		
 	}
 
 	// Called repeatedly when this Command is scheduled to run
 	@Override
 	protected void execute() {
-		if(!Robot.driveTrain.reversed){
+		
 			Robot.driveTrain.joyDrive();
-		} else if(Robot.driveTrain.reversed){
-			Robot.driveTrain.revJoyDrive();
-		}
+			
 	}
 
 	// Make this return true when this Command no longer needs to run execute()

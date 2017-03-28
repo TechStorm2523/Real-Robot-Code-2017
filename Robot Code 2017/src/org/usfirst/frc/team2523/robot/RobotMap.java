@@ -14,6 +14,10 @@ import edu.wpi.first.wpilibj.Talon;
 public class RobotMap {
 	// For example to map the left and right motors, you could define the
 	// following variables to use with your drivetrain subsystem.
+	public static double rightvoltage = 12;
+	public static double leftvoltage = 11;
+	public static double rightAvoltage = 7.7;
+	public static double leftAvoltage = 6.7;
 	public static int leftMotor1 = 4;
 	public static int rightMotor1 = 1;
 	public static int leftMotor2 = 2;
@@ -23,8 +27,9 @@ public class RobotMap {
 	public static int liftBelt = 4;
 	public static int liftRoller = 6;
 	public static int winchMotor = 3;
-	public static int flap1 = 9;
-	public static int flap2 = 6;
+	public static int flap = 9;
+	public static double speedMod = 1;
+	
 	
 	
 	

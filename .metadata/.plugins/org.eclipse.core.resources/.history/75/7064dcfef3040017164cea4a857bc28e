@@ -1,0 +1,51 @@
+package org.usfirst.frc.team2523.robot.commands;
+
+import edu.wpi.first.wpilibj.command.CommandGroup;
+
+/**
+ *
+ */
+public class Auto1 extends CommandGroup {
+
+    public Auto1() { 
+    	addSequential(new ServoUp());
+
+        //Auto for Retr side, blue team
+    	//Hypothetically Done, apart from bugs in methods
+    	
+        
+    	addSequential(new DriveForDistanceUpdated(4.77)); //Drive to base line
+    	addSequential(new TurnForAngle(55, 1, -1));//Turn left to face gear peg
+    	addSequential(new DriveForDistanceUpdated(4.25));//Put on Gear (Maybe not accurate enough, maybe is)
+    	addSequential(new WaitForTime(2.5));
+    	addSequential(new DriveForDistanceUpdated(-4.25));//Reverse off of gear
+    	addSequential(new TurnForAngle(55, 1, 1));//Turn Right to face forward
+    	addSequential(new DriveForDistanceUpdated(-2.385)); //go back to midpoint
+    	addSequential(new TurnForAngle(97.5, 1, -1));//Turn left to face boiler
+    	addSequential(new DriveForDistanceUpdated(19.5)); //go to boiler
+    	addParallel(new Fire());
+    	addParallel(new RunTransit());
+    	addParallel(new FeedFuel());
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+        //      addSequential(new Command2());
+        // these will run in order.
+
+        // To run multiple commands at the same time,
+        // use addParallel()
+        // e.g. addParallel(new Command1());
+        //      addSequential(new Command2());
+        // Command1 and Command2 will run in parallel.
+
+        // A command group will require all of the subsystems that each member
+        // would require.
+        // e.g. if Command1 requires chassis, and Command2 requires arm,
+        // a CommandGroup containing them would require both the chassis and the
+        // arm.
+    }
+}

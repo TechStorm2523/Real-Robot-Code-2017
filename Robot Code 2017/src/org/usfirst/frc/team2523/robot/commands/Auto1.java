@@ -7,19 +7,32 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
  */
 public class Auto1 extends CommandGroup {
 
-    public Auto1() { //This first part should be deleted after testing, as it is simply for calibration
-    	addSequential(new DriveForDistance(4,1));
-    	addSequential(new TurnForAngle(90,.5,-1));
-    	addSequential(new DriveForDistance(4,1));
-    	addSequential(new TurnForAngle(90,.5,-1));
-    	addSequential(new DriveForDistance(4,1));
-    	addSequential(new TurnForAngle(90,.5,-1));
-    	addSequential(new DriveForDistance(4,1));
-        // Add Commands here:
+    public Auto1() { 
+    	addSequential(new ServoUp());
+
+        //Auto for Retr side, blue team
+    	//Hypothetically Done, apart from bugs in methods
+    	
         
-    	addSequential(new DriveForDistance(7.77, 1)); //Drive to base line
-    	addSequential(new TurnForAngle(160, 1, 1));
-    	addSequential(new DriveForDistance(7.77, 1));
+    	addSequential(new drive6point5()); //Drive to base line
+    	addSequential(new TurnForAngleUpdated(-55));//Turn left to face gear peg
+    	addSequential(new DriveForDistanceUpdated(3.5));//Put on Gear (Maybe not accurate enough, maybe is)
+//    	addSequential(new WaitForTime(2.5));
+//    	addSequential(new DriveForDistanceUpdated(-4.25));//Reverse off of gear
+//    	addSequential(new TurnForAngle(55, 1, 1));//Turn Right to face forward
+//    	addSequential(new DriveForDistanceUpdated(-2.385)); //go back to midpoint
+//    	addSequential(new TurnForAngle(97.5, 1, -1));//Turn left to face boiler
+//    	addSequential(new DriveForDistanceUpdated(19.5)); //go to boiler
+//    	addParallel(new Fire());
+//    	addParallel(new RunTransit());
+//    	addParallel(new FeedFuel());
+    	
+    	
+    	
+    	
+    	
+    	
+    	
         //      addSequential(new Command2());
         // these will run in order.
 
