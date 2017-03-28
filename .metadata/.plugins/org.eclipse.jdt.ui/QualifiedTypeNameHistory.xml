@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="edu.wpi.first.wpilibj.Joystick"/>
-<fullyQualifiedTypeName name="org.usfirst.frc.team2523.robot.OI"/>
 <fullyQualifiedTypeName name="edu.wpi.first.wpilibj.buttons.JoystickButton"/>
 <fullyQualifiedTypeName name="org.usfirst.frc.team2523.robot.subsystems.FeedSystem"/>
 <fullyQualifiedTypeName name="org.usfirst.frc.team2523.robot.subsystems.LaunchSystem"/>
@@ -46,7 +45,8 @@
 <fullyQualifiedTypeName name="org.usfirst.frc.team2523.robot.commands.Auto5"/>
 <fullyQualifiedTypeName name="org.usfirst.frc.team2523.robot.commands.Auto6"/>
 <fullyQualifiedTypeName name="com.ctre.CANTalon.TalonControlMode"/>
-<fullyQualifiedTypeName name="org.usfirst.frc.team2523.robot.RobotMap"/>
 <fullyQualifiedTypeName name="edu.wpi.first.wpilibj.Spark"/>
 <fullyQualifiedTypeName name="edu.wpi.first.wpilibj.Timer"/>
+<fullyQualifiedTypeName name="org.usfirst.frc.team2523.robot.RobotMap"/>
+<fullyQualifiedTypeName name="org.usfirst.frc.team2523.robot.OI"/>
 </qualifiedTypeNameHistroy>
